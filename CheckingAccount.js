@@ -1,7 +1,9 @@
+import { Client } from "./client.js";
+
 class CheckingAccount {
     agency;
-    client;
 
+    _client;
     _balance = 0;
 
     withdraw(value) {
@@ -34,6 +36,22 @@ class CheckingAccount {
     transfer(value, destinationAccount) {
         const transfer = this.withdraw(value);
         destinationAccount.deposit(transfer);
+    }
+
+    get balance() {
+        return this._balance;
+    }
+
+    get client() {
+        return this._client;
+    }
+
+    set client(name) {
+        if (name instanceof Client) {
+            return this._client = name;
+        } else {
+            return console.log("Invalid client. Please enter a valid client.");
+        }
     }
 }
 
