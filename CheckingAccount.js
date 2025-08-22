@@ -1,15 +1,12 @@
 import { Client } from "./client.js";
 
 class CheckingAccount {
-    agency;
     static numberOfAccounts = 0;
-
-    _client;
-    _balance = 0;
 
     constructor(agency, client) {
         this.agency = agency;
         this.client = client;
+        this._balance = 0;
         CheckingAccount.numberOfAccounts++;
     }
 
