@@ -1,9 +1,9 @@
-class SavingsAccount {
+import { Account } from "./Account.js";
+
+class SavingsAccount extends Account {
     constructor (agency, client, initialBalance) {
-        this._agency = agency;
-        this._client = client;
-        this._balance = initialBalance;
+        super(agency, client, initialBalance);
     }
 }
 
-export { SavingsAccount }
+export { SavingsAccount };
