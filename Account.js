@@ -1,13 +1,16 @@
 class Account {
     constructor (agency, client, initialBalance) {
+        if (this.constructor == Account) {
+            throw new Error("Invalid Operation.");
+        }
+
         this._agency = agency;
         this._client = client;
         this._balance = initialBalance;
     }
 
     withdraw(value) {
-        let fee = 1;
-        return this._withdraw(value, fee);
+        throw new Error("Abstract method. Please implement in subclasses.");
     }
 
     _withdraw(value, fee) {
