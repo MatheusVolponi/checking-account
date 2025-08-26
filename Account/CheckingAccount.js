@@ -13,4 +13,5 @@ class CheckingAccount extends Account {
         return this._withdraw(value, fee);
     }
 }
+
 export { CheckingAccount };

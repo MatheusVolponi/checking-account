@@ -1,7 +1,10 @@
-class Client {
-    constructor(name, document) {
-        this.name = name;
+class Employee {
+    constructor(name, salary, document) {
+        this._name = name;
+        this._salary = salary;
         this._document = document;
+        
+        this._bonus = 1;
         this._password;
     }
 
@@ -12,10 +15,6 @@ class Client {
     authenticate(password) {
         return password == this._password;
     }
-
-    get document() {
-        return this._document;
-    }
 }
 
-export { Client };
+export { Employee };
